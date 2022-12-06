@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.widget.LinearLayout;
 
 import com.example.mylocal.advertisement.AdsActivity;
+import com.example.mylocal.news.NewsActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,9 +20,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ads = findViewById(R.id.adsBtn);
+        news = findViewById(R.id.newsBtn);
 
         ads.setOnClickListener(v -> {
             startActivity(new Intent(this, AdsActivity.class));
+        });
+
+        news.setOnClickListener(v -> {
+            startActivity(new Intent(this, NewsActivity.class));
         });
 
     }
