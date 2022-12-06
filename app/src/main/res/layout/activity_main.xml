@@ -39,6 +39,7 @@
                     app:cardUseCompatPadding="true">
 
                     <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/adsBtn"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
@@ -69,6 +70,7 @@
                     app:cardUseCompatPadding="true">
 
                     <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/guideBtn"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
@@ -106,6 +108,7 @@
                     app:cardUseCompatPadding="true">
 
                     <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/transportBtn"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
@@ -136,6 +139,7 @@
                     app:cardUseCompatPadding="true">
 
                     <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/newsBtn"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"

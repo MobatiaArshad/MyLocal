@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.mylocal"
-        minSdk 21
+        minSdk 27
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -39,5 +39,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
 
-
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
 }
