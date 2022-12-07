@@ -14,6 +14,7 @@ import com.example.mylocal.advertisement.model.AdsModel;
 import com.example.mylocal.utils.RecClickedPosition;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -29,16 +30,23 @@ public class AdsActivity extends AppCompatActivity {
 
         categoryRec = findViewById(R.id.categoryRec);
         adsRec = findViewById(R.id.adsRec);
+        adsRec.scheduleLayoutAnimation();
 
+        adsRec.setAdapter(new AdsAdapter(AdsData()));
 
-        categoryRec.setAdapter(new AdsCategoryAdapter(AdsData().stream().map(AdsModel::getCategory).distinct().collect(Collectors.toList()), (position, value) -> {
-            adsRec.setAdapter(new AdsAdapter(AdsData().stream().filter(p -> Objects.equals(p.getCategory(), value)).collect(Collectors.toList())));
+        List<String> adapterData = AdsData().stream().map(AdsModel::getCategory).distinct().collect(Collectors.toList());
+        adapterData.add(0,"All");
+
+        categoryRec.setAdapter(new AdsCategoryAdapter(adapterData, (position, value) -> {
+            adsRec.scheduleLayoutAnimation();
+            if (value.equals("All")) adsRec.setAdapter(new AdsAdapter(AdsData()));
+            else adsRec.setAdapter(new AdsAdapter(AdsData().stream().filter(p -> Objects.equals(p.getCategory(), value)).collect(Collectors.toList())));
         }));
 
     }
 
-    public ArrayList<AdsModel> AdsData() {
-        ArrayList<AdsModel> arrayList = new ArrayList<>();
+    public List<AdsModel> AdsData() {
+        List<AdsModel> arrayList = new ArrayList<>();
         arrayList.add(new AdsModel(
                 "Christmas is Here!!",
                 "https://www.gannett-cdn.com/presto/2020/12/10/USAT/0db5d522-3bf6-4cbc-8c3a-84e271e6aad3-VPC_MCDONALDS_FREE_CHRISTMAS_MEALS_DESK_THUMB.jpg?width=1280&height=720&fit=crop&format=pjpg&auto=webp",

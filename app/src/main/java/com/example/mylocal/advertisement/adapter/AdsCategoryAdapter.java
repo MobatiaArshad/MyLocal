@@ -35,10 +35,7 @@ public class AdsCategoryAdapter extends RecyclerView.Adapter<AdsCategoryAdapter.
     public void onBindViewHolder(@NonNull VH holder, int position) {
         holder.title.setText(arrayList.get(position));
 
-        if (activePosition == position) {
-            holder.item.setBackgroundColor(holder.itemView.getContext().getColor(R.color.icon_green));
-            clickedPosition.clicked(position,arrayList.get(position));
-        }
+        if (activePosition == position) holder.item.setBackgroundColor(holder.itemView.getContext().getColor(R.color.icon_green));
         else holder.item.setBackgroundColor(holder.itemView.getContext().getColor(R.color.white));
 
         holder.itemView.setOnClickListener(v -> {

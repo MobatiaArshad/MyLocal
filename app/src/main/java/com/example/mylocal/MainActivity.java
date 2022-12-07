@@ -9,6 +9,8 @@ import android.widget.LinearLayout;
 
 import com.example.mylocal.advertisement.AdsActivity;
 import com.example.mylocal.news.NewsActivity;
+import com.example.mylocal.touristGuide.TouristGuideActivity;
+import com.example.mylocal.touristGuide.adapter.GuideAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         ads = findViewById(R.id.adsBtn);
         news = findViewById(R.id.newsBtn);
+        guide = findViewById(R.id.guideBtn);
 
         ads.setOnClickListener(v -> {
             startActivity(new Intent(this, AdsActivity.class));
@@ -28,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
 
         news.setOnClickListener(v -> {
             startActivity(new Intent(this, NewsActivity.class));
+        });
+
+        guide.setOnClickListener(v -> {
+            startActivity(new Intent(this, TouristGuideActivity.class));
         });
 
     }

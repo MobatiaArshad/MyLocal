@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.os.Handler;
 
 import com.example.mylocal.R;
 import com.example.mylocal.news.adapter.NewsAdapter;
@@ -21,7 +22,15 @@ public class NewsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_news);
 
         newsRec = findViewById(R.id.newsRec);
-        newsRec.setAdapter(new NewsAdapter(newsData()));
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                newsRec.scheduleLayoutAnimation();
+                newsRec.setAdapter(new NewsAdapter(newsData()));
+            }
+        },100);
+
 
     }
 

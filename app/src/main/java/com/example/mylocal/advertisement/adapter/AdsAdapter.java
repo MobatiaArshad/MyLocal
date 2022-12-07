@@ -32,8 +32,8 @@ public class AdsAdapter extends RecyclerView.Adapter<AdsAdapter.VH> {
 
     @Override
     public void onBindViewHolder(@NonNull VH holder, int position) {
-        holder.title.setText(arrayList.get(position).getTitle());
-        holder.desc.setText(arrayList.get(position).getDesc());
+//        holder.title.setText(arrayList.get(position).getTitle());
+//        holder.desc.setText(arrayList.get(position).getDesc());
 
         Glide.with(holder.itemView.getContext())
                 .asBitmap()
@@ -54,8 +54,8 @@ public class AdsAdapter extends RecyclerView.Adapter<AdsAdapter.VH> {
 
         public VH(@NonNull View itemView) {
             super(itemView);
-            title = itemView.findViewById(R.id.adTitle);
-            desc = itemView.findViewById(R.id.adDesc);
+//            title = itemView.findViewById(R.id.adTitle);
+//            desc = itemView.findViewById(R.id.adDesc);
             img = itemView.findViewById(R.id.adImg);
         }
     }

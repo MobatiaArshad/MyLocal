@@ -15,6 +15,13 @@
         android:theme="@style/Theme.MyLocal"
         tools:targetApi="31">
         <activity
+            android:name=".GuideDetailActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".transport.TransportActivity"
             android:exported="false">
             <meta-data
