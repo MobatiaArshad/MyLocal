@@ -3,6 +3,7 @@ package com.example.mylocal.news;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
@@ -27,7 +28,10 @@ public class NewsActivity extends AppCompatActivity {
             @Override
             public void run() {
                 newsRec.scheduleLayoutAnimation();
-                newsRec.setAdapter(new NewsAdapter(newsData()));
+                newsRec.setAdapter(new NewsAdapter(newsData(),(position, value) -> {
+                    startActivity(new Intent(NewsActivity.this,NewsDetailActivity.class)
+                            .putExtra("data",newsData().get(position)));
+                }));
             }
         },100);
 

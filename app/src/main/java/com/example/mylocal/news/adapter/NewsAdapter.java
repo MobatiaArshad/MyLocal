@@ -12,15 +12,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.mylocal.R;
 import com.example.mylocal.news.model.NewsData;
+import com.example.mylocal.utils.RecClickedPosition;
 
 import java.util.ArrayList;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.VH> {
 
     ArrayList<NewsData> newsData;
+    RecClickedPosition clickedPosition;
 
-    public NewsAdapter(ArrayList<NewsData> newsData) {
+    public NewsAdapter(ArrayList<NewsData> newsData, RecClickedPosition clickedPosition) {
         this.newsData = newsData;
+        this.clickedPosition = clickedPosition;
     }
 
     @NonNull
@@ -40,6 +43,10 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.VH> {
                 .asBitmap()
                 .load(newsData.get(position).getImg())
                 .into(holder.img);
+
+        holder.itemView.setOnClickListener(v -> {
+            clickedPosition.clicked(position,"");
+        });
     }
 
     @Override

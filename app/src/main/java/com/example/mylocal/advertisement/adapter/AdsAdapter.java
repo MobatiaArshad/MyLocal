@@ -1,5 +1,6 @@
 package com.example.mylocal.advertisement.adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.mylocal.R;
 import com.example.mylocal.advertisement.model.AdsModel;
+import com.stfalcon.imageviewer.StfalconImageViewer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +42,15 @@ public class AdsAdapter extends RecyclerView.Adapter<AdsAdapter.VH> {
                 .load(arrayList.get(position).getImage())
                 .into(holder.img);
 
+        holder.itemView.setOnClickListener(v -> {
+            new StfalconImageViewer.Builder<AdsModel>(holder.itemView.getContext(),arrayList,(imageView, image) -> {
+               Glide.with(holder.itemView.getContext())
+                       .asBitmap()
+                       .load(image.getImage())
+                       .into(imageView);
+            }).withStartPosition(position).show();
+
+        });
     }
 
     @Override
