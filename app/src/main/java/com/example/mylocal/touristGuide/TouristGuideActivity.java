@@ -3,6 +3,7 @@ package com.example.mylocal.touristGuide;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
@@ -28,11 +29,14 @@ public class TouristGuideActivity extends AppCompatActivity {
             @Override
             public void run() {
                 recyclerView.scheduleLayoutAnimation();
-                recyclerView.setAdapter(new GuideAdapter(getGuideData().stream().map(GuideData::getTitle).collect(Collectors.toList()),(position,value) -> {
-
+                recyclerView.setAdapter(new GuideAdapter(getGuideData().stream().map(GuideData::getTitle).collect(Collectors.toList()), (position, value) -> {
+                    startActivity(new Intent(TouristGuideActivity.this, GuideDetailActivity.class)
+                            .putExtra("data", getGuideData().get(position).getDesc())
+                            .putExtra("title",getGuideData().get(position).getTitle())
+                    );
                 }));
             }
-        },100);
+        }, 100);
 
 
 
