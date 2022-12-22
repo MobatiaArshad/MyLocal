@@ -24,15 +24,10 @@ public class NewsActivity extends AppCompatActivity {
 
         newsRec = findViewById(R.id.newsRec);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                newsRec.scheduleLayoutAnimation();
-                newsRec.setAdapter(new NewsAdapter(newsData(),(position, value) -> {
-                    startActivity(new Intent(NewsActivity.this,NewsDetailActivity.class)
-                            .putExtra("data",newsData().get(position)));
-                }));
-            }
+        new Handler().postDelayed(() -> {
+            newsRec.scheduleLayoutAnimation();
+            newsRec.setAdapter(new NewsAdapter(newsData(),(position, value) -> startActivity(new Intent(NewsActivity.this,NewsDetailActivity.class)
+                    .putExtra("data",newsData().get(position)))));
         },100);
 
 
@@ -40,6 +35,15 @@ public class NewsActivity extends AppCompatActivity {
 
     public ArrayList<NewsData> newsData() {
         ArrayList<NewsData> newsData = new ArrayList<>();
+        newsData.add(new NewsData(
+                "Argentina lift the world cup after 36 years",
+                "Waves of euphoria sweep through Lusail Stadium as La Albiceleste beat France in a dramatic final to become champions for a third time.",
+                "https://media.cnn.com/api/v1/images/stellar/prod/221218143251-argentina-team-world-cup-celebrates-121822.jpg?c=original",
+                "Dec 18, 2022 | 10:38 AM",
+                "Rob Banks",
+                "Sports",
+                0
+        ));
         newsData.add(new NewsData(
                 "Brazil pay tribute to ailing Pele after defeating South Korea 4-1 in FIFA World Cup round 16 match",
                 "The Brazilian team paid tribute to their country's legendary footballer Pele by dedicating the victory against South Korea in the round of 16 match on Monday. Notably, the 82-year-old football legend is reportedly undergoing treatment for a respiratory problem at a hospital in Sao Paulo. Pele is also suffering from colon cancer.\n" +

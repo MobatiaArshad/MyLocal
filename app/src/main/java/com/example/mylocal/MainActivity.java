@@ -11,6 +11,7 @@ import com.example.mylocal.advertisement.AdsActivity;
 import com.example.mylocal.news.NewsActivity;
 import com.example.mylocal.touristGuide.TouristGuideActivity;
 import com.example.mylocal.touristGuide.adapter.GuideAdapter;
+import com.example.mylocal.transport.TransportActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,18 +25,15 @@ public class MainActivity extends AppCompatActivity {
         ads = findViewById(R.id.adsBtn);
         news = findViewById(R.id.newsBtn);
         guide = findViewById(R.id.guideBtn);
+        transport = findViewById(R.id.transportBtn);
 
-        ads.setOnClickListener(v -> {
-            startActivity(new Intent(this, AdsActivity.class));
-        });
+        ads.setOnClickListener(v -> startActivity(new Intent(this, AdsActivity.class)));
 
-        news.setOnClickListener(v -> {
-            startActivity(new Intent(this, NewsActivity.class));
-        });
+        news.setOnClickListener(v -> startActivity(new Intent(this, NewsActivity.class)));
 
-        guide.setOnClickListener(v -> {
-            startActivity(new Intent(this, TouristGuideActivity.class));
-        });
+        guide.setOnClickListener(v -> startActivity(new Intent(this, TouristGuideActivity.class)));
+
+        transport.setOnClickListener(v -> startActivity(new Intent(this, TransportActivity.class)));
 
     }
 }
