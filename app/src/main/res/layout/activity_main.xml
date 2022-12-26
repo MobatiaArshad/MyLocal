@@ -27,7 +27,7 @@
                 android:textColor="@color/bg_green"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:text="My Local"
+                android:text="@string/my_local"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -68,6 +68,9 @@
                         android:id="@+id/adsBtn"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -82,7 +85,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="10dp"
-                            android:text="Advertisement" />
+                            android:text="@string/advertisement" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
                 </androidx.cardview.widget.CardView>
@@ -99,6 +102,9 @@
                         android:id="@+id/guideBtn"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -113,7 +119,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="10dp"
-                            android:text="Tourist Guide" />
+                            android:text="@string/tourist_guide" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
                 </androidx.cardview.widget.CardView>
@@ -137,6 +143,9 @@
                         android:id="@+id/transportBtn"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -151,7 +160,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="10dp"
-                            android:text="Transport" />
+                            android:text="@string/transport" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
                 </androidx.cardview.widget.CardView>
@@ -168,6 +177,9 @@
                         android:id="@+id/newsBtn"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -182,7 +194,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="10dp"
-                            android:text="News" />
+                            android:text="@string/news" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
                 </androidx.cardview.widget.CardView>

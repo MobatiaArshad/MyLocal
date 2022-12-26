@@ -33,6 +33,8 @@ public class TransportAdapter extends RecyclerView.Adapter<TransportAdapter.MyVH
     @Override
     public void onBindViewHolder(@NonNull MyVH holder, int position) {
         holder.title.setText(arrayList.get(position).getTitle());
+
+        holder.itemView.setOnClickListener(v -> clickedPosition.clicked(position,""));
     }
 
     @Override

@@ -3,6 +3,7 @@ package com.example.mylocal.transport;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
@@ -27,7 +28,15 @@ public class TransportActivity extends AppCompatActivity {
         new Handler().postDelayed(() -> {
             recyclerView.scheduleLayoutAnimation();
             recyclerView.setAdapter(new TransportAdapter(transportData(), (position, value) -> {
-
+                if (position == 0) {
+                    startActivity(new Intent(this, ZoomableActivity.class)
+                            .putExtra("type", "0"));
+                } else if (position == 1) {
+                    startActivity(new Intent(this,ZoomableActivity.class)
+                            .putExtra("type","1"));
+                } else {
+                    startActivity(new Intent(this,HowToGoActivity.class));
+                }
             }));
         },100);
 
@@ -42,7 +51,7 @@ public class TransportActivity extends AppCompatActivity {
            "See the DLR stops"
         ));
         arrayList.add(new TransportModel(
-           "Find your stations"
+           "How to go?"
         ));
 
         return arrayList;
