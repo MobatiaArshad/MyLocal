@@ -24,7 +24,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:text="Advertisement"
+                android:text="@string/foods_and_shopping"
                 android:textColor="@color/bg_green"
                 android:textSize="18sp"
                 android:textStyle="bold"

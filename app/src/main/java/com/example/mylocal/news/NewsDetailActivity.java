@@ -33,9 +33,6 @@ public class NewsDetailActivity extends AppCompatActivity {
         shareBtn = findViewById(R.id.shareIco);
 
         title.setText(newsData.getTitle());
-        description.setText(newsData.getDesc());
-        author.setText(newsData.getAuthor());
-        date.setText(newsData.getPostedDate());
 
         Glide.with(this)
                 .asBitmap()

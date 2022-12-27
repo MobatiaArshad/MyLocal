@@ -50,7 +50,7 @@ public class AdsActivity extends AppCompatActivity {
         List<AdsModel> arrayList = new ArrayList<>();
         arrayList.add(new AdsModel(
                 "Christmas is Here!!",
-                "https://www.gannett-cdn.com/presto/2020/12/10/USAT/0db5d522-3bf6-4cbc-8c3a-84e271e6aad3-VPC_MCDONALDS_FREE_CHRISTMAS_MEALS_DESK_THUMB.jpg?width=1280&height=720&fit=crop&format=pjpg&auto=webp",
+                "https://thumbs.dreamstime.com/z/avocado-coffee-greenwich-london-uk-peninsula-june-organic-vegetarian-vegan-products-modern-lifestyle-shop-196218380.jpg",
                 "McDonald’s giving away free food with app deals Monday through Christmas Eve featuring Santa, Rudolph, more",
                 "Restaurant/Cafe",
                 true
@@ -64,44 +64,23 @@ public class AdsActivity extends AppCompatActivity {
         ));
         arrayList.add(new AdsModel(
                 "Made in Greenwich",
-                "https://www.allthingsgreenwich.co.uk/images/made_in_greenwich-926-(600px).jpg",
+                "https://www.allthingsgreenwich.co.uk/images/the_cutty_sark_gift_shop-1000-(600px).jpg",
                 "McDonald’s giving away free food with app deals Monday through Christmas Eve featuring Santa, Rudolph, more",
                 "Gift",
                 false
         ));
         arrayList.add(new AdsModel(
                 "Rustic Chic",
-                "https://www.allthingsgreenwich.co.uk/images/rusticchic-1144-(600px).jpg",
+                "https://fastly.4sqi.net/img/general/width960/330762_r-5Ya4mkQdTRcN_u7iLO6O8to1rQNv0grq-Y90Gu2vM.jpg",
                 "McDonald’s giving away free food with app deals Monday through Christmas Eve featuring Santa, Rudolph, more",
                 "Gift",
                 false
         ));
         arrayList.add(new AdsModel(
-                "IKEA",
-                "https://static.dezeen.com/uploads/2019/02/ikea-greenwich-sustainable-store_dezeen_1704_hero_0.jpg",
-                "McDonald’s giving away free food with app deals Monday through Christmas Eve featuring Santa, Rudolph, more",
-                "Grocery",
-                false
-        ));
-        arrayList.add(new AdsModel(
-                "ALDI",
-                "https://ichef.bbci.co.uk/news/976/cpsprodpb/37AF/production/_122755241_aldi-shopandgo-2.jpg",
-                "McDonald’s giving away free food with app deals Monday through Christmas Eve featuring Santa, Rudolph, more",
-                "Grocery",
-                false
-        ));
-        arrayList.add(new AdsModel(
-                "7Eleven",
-                "https://www.claruscommerce.com/wp-content/uploads/2019/12/how-did-7eleven-nearly-triple-its-loyalty-program-membership-0x0.jpg",
-                "McDonald’s giving away free food with app deals Monday through Christmas Eve featuring Santa, Rudolph, more",
-                "Grocery",
-                false
-        ));
-        arrayList.add(new AdsModel(
                 "Carrefour",
-                "https://etimg.etb2bimg.com/photo/93708754.cms",
+                "https://lh3.googleusercontent.com/p/AF1QipN0Co5WtWVIrWuq1_3G2l-gPkjtX5N2x1r9r1xe=s680-w680-h510",
                 "McDonald’s giving away free food with app deals Monday through Christmas Eve featuring Santa, Rudolph, more",
-                "Grocery",
+                "Restaurant/Cafe",
                 false
         ));
         return arrayList;

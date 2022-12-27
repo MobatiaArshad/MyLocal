@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/icon_green"
     tools:context=".news.NewsActivity">
 
     <androidx.cardview.widget.CardView
@@ -23,7 +24,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:text="News"
+                android:text="@string/greenwich_media"
                 android:textColor="@color/bg_green"
                 android:textSize="18sp"
                 android:textStyle="bold"

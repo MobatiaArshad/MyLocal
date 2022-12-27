@@ -35,9 +35,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.VH> {
     @Override
     public void onBindViewHolder(@NonNull VH holder, int position) {
         holder.title.setText(newsData.get(position).getTitle());
-        holder.description.setText(newsData.get(position).getDesc());
-        holder.author.setText(newsData.get(position).getAuthor());
-        holder.date.setText(newsData.get(position).getPostedDate());
 
         Glide.with(holder.itemView.getContext())
                 .asBitmap()
@@ -45,7 +42,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.VH> {
                 .into(holder.img);
 
         holder.itemView.setOnClickListener(v -> {
-            clickedPosition.clicked(position,"");
+            clickedPosition.clicked(position,newsData.get(position).getLink());
         });
     }
 
@@ -55,18 +52,13 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.VH> {
     }
 
     static class VH extends RecyclerView.ViewHolder {
-        TextView title,author,date,description;
-        ImageView img,likeBtn,shareBtn;
+        TextView title;
+        ImageView img;
 
         public VH(@NonNull View itemView) {
             super(itemView);
             title = itemView.findViewById(R.id.newTitleTxt);
-            description = itemView.findViewById(R.id.newDescTxt);
-            author = itemView.findViewById(R.id.authorTxt);
-            date = itemView.findViewById(R.id.dateTxt);
             img = itemView.findViewById(R.id.newsImg);
-            likeBtn = itemView.findViewById(R.id.likeBtn);
-            shareBtn = itemView.findViewById(R.id.shareIco);
         }
     }
 }

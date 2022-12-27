@@ -21,30 +21,9 @@
             android:id="@+id/newsImg"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop"/>
+            android:scaleType="centerCrop" />
     </androidx.cardview.widget.CardView>
 
-    <TextView
-        android:id="@+id/authorTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="3dp"
-        android:textColor="@color/bg_green"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
-        tools:text="Fathima Ahsana" />
-
-    <TextView
-        android:id="@+id/dateTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="3dp"
-        app:layout_constraintStart_toEndOf="@+id/authorTxt"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
-        tools:text="Dec 12, 18:30" />
 
     <TextView
         android:id="@+id/newTitleTxt"
@@ -57,9 +36,10 @@
         android:maxLines="1"
         android:textSize="22sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/authorTxt"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
         tools:text="Long news title text with ellipse effect at end" />
 
     <TextView
@@ -71,6 +51,7 @@
         android:layout_marginEnd="5dp"
         android:ellipsize="end"
         android:maxLines="2"
+        android:visibility="gone"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,34 +59,16 @@
         tools:text="Long news title text with ellipse effect at end Long news title text with ellipse effect at end Long news title text with ellipse effect at end Long news title text with ellipse effect at end " />
 
     <View
+        android:id="@+id/view"
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="10dp"
         android:background="@android:color/darker_gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/likeBtn"
         app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
-        android:id="@+id/likeBtn"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="@+id/newDescTxt"
-        app:layout_constraintTop_toBottomOf="@+id/newDescTxt"
-        app:srcCompat="@drawable/unliked" />
 
-    <ImageView
-        android:id="@+id/shareIco"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/likeBtn"
-        app:layout_constraintStart_toEndOf="@+id/likeBtn"
-        app:layout_constraintTop_toTopOf="@+id/likeBtn"
-        app:srcCompat="@drawable/share_ico" />
 </androidx.constraintlayout.widget.ConstraintLayout>
