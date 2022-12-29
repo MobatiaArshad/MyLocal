@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 
 import com.example.mylocal.R;
 import com.example.mylocal.news.adapter.NewsAdapter;
@@ -16,21 +18,28 @@ import java.util.ArrayList;
 
 public class NewsActivity extends AppCompatActivity {
 
-    RecyclerView newsRec;
+//    RecyclerView newsRec;
+    WebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
 
-        newsRec = findViewById(R.id.newsRec);
+//        newsRec = findViewById(R.id.newsRec);
 
-        new Handler().postDelayed(() -> {
-            newsRec.scheduleLayoutAnimation();
-            newsRec.setAdapter(new NewsAdapter(newsData(),(position, value) -> startActivity(new Intent(Intent.ACTION_VIEW,
-                    Uri.parse(value)))));
-        },100);
+//        new Handler().postDelayed(() -> {
+//            newsRec.scheduleLayoutAnimation();
+//            newsRec.setAdapter(new NewsAdapter(newsData(),(position, value) -> startActivity(new Intent(Intent.ACTION_VIEW,
+//                    Uri.parse(value)))));
+//        },100);
 
+        webView = findViewById(R.id.webView);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setDomStorageEnabled(true);
+        webView.getSettings().setLoadsImagesAutomatically(true);
+        webView.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+        webView.loadUrl("https://www.mylondon.news/all-about/greenwich");
 
     }
 

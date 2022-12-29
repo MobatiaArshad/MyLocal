@@ -92,7 +92,7 @@
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:layout_marginTop="10dp"
-                            app:srcCompat="@drawable/ads_ico" />
+                            app:srcCompat="@drawable/food_and_gift_ico" />
 
                         <TextView
                             android:layout_width="wrap_content"
