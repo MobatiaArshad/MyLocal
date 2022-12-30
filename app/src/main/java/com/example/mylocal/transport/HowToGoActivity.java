@@ -29,6 +29,7 @@ public class HowToGoActivity extends AppCompatActivity {
             recyclerView.scheduleLayoutAnimation();
             recyclerView.setAdapter(new TransportAdapter(transportData(), (position, value) -> {
 
+                // setting webURL according to the array position
                 String uri = null;
 
                 switch (position) {
@@ -50,6 +51,7 @@ public class HowToGoActivity extends AppCompatActivity {
                 }
 
 
+                // Calling external browser to load URL
                 Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(uri));
                 startActivity(Intent.createChooser(intent, "Select an application"));
 
@@ -59,6 +61,7 @@ public class HowToGoActivity extends AppCompatActivity {
 
     }
 
+    // setting HOW TO GO array data
     public ArrayList<TransportModel> transportData() {
         ArrayList<TransportModel> arrayList = new ArrayList<>();
         arrayList.add(new TransportModel(

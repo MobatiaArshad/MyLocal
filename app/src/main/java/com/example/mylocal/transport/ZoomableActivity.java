@@ -18,6 +18,10 @@ public class ZoomableActivity extends AppCompatActivity {
 
         photoView = findViewById(R.id.zoomView);
 
+        /**
+         * @getIntent() receive data from Transport type as 0 or 1
+         */
+
         if (getIntent().getStringExtra("type").equals("0")) {
             photoView.setImageResource(R.drawable.under_ground);
         } else {

@@ -28,7 +28,10 @@ public class TouristGuideActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+                // setting recyclerView Animation
                 recyclerView.scheduleLayoutAnimation();
+
+                // Setting recyclerView adapter
                 recyclerView.setAdapter(new GuideAdapter(getGuideData().stream().map(GuideData::getTitle).collect(Collectors.toList()), (position, value) -> {
                     startActivity(new Intent(TouristGuideActivity.this, GuideDetailActivity.class)
                             .putExtra("data", getGuideData().get(position).getDesc())
@@ -43,6 +46,11 @@ public class TouristGuideActivity extends AppCompatActivity {
 
 
     }
+
+    /*
+        creating Guides Array data
+        each data are in the form of HTML
+     */
 
     private ArrayList<GuideData> getGuideData() {
         ArrayList<GuideData> arrayList = new ArrayList<>();

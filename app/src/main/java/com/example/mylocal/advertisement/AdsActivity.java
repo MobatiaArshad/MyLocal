@@ -33,18 +33,37 @@ public class AdsActivity extends AppCompatActivity {
         adsRec = findViewById(R.id.adsRec);
         adsRec.scheduleLayoutAnimation();
 
+        /**
+         *  setting Recycler Adapter
+         */
+
         adsRec.setAdapter(new AdsAdapter(AdsData()));
 
         List<String> adapterData = AdsData().stream().map(AdsModel::getCategory).distinct().collect(Collectors.toList());
         adapterData.add(0,"All");
 
         categoryRec.setAdapter(new AdsCategoryAdapter(adapterData, (position, value) -> {
+
+            /**
+             *  calling for recyclerview animation
+             */
+
             adsRec.scheduleLayoutAnimation();
+
+            /*
+                sorting list item according to user selection
+             */
+
             if (value.equals("All")) adsRec.setAdapter(new AdsAdapter(AdsData()));
             else adsRec.setAdapter(new AdsAdapter(AdsData().stream().filter(p -> Objects.equals(p.getCategory(), value)).collect(Collectors.toList())));
         }));
 
     }
+
+    /**
+     *
+     *  creating array data for advertisement
+     */
 
     public List<AdsModel> AdsData() {
         List<AdsModel> arrayList = new ArrayList<>();

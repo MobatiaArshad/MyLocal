@@ -28,10 +28,18 @@ public class TransportActivity extends AppCompatActivity {
         new Handler().postDelayed(() -> {
             recyclerView.scheduleLayoutAnimation();
             recyclerView.setAdapter(new TransportAdapter(transportData(), (position, value) -> {
+
+                /**
+                 * @position is 0 then user must see under ground map or if it is 1 it should see  dlr map
+                 * if did not meet both state it intent to move to next page
+                 */
+
                 if (position == 0) {
+                    // showing underground Map
                     startActivity(new Intent(this, ZoomableActivity.class)
                             .putExtra("type", "0"));
                 } else if (position == 1) {
+                    // showing DLR Map
                     startActivity(new Intent(this,ZoomableActivity.class)
                             .putExtra("type","1"));
                 } else {
@@ -41,6 +49,8 @@ public class TransportActivity extends AppCompatActivity {
         },100);
 
     }
+
+    // setting transport array Data
 
     public ArrayList<TransportModel> transportData() {
         ArrayList<TransportModel> arrayList = new ArrayList<>();

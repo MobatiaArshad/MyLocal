@@ -18,6 +18,10 @@ public class SplashActivity extends AppCompatActivity {
 
         splashImg = findViewById(R.id.splashImg);
 
+
+        /**
+         *  Used Handler to show Splash screen which will show only for 2sec
+         */
         new Handler().postDelayed(() -> {
             startActivity(new Intent(SplashActivity.this,MainActivity.class));
         },2000);

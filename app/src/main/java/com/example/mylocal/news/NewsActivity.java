@@ -34,6 +34,11 @@ public class NewsActivity extends AppCompatActivity {
 //                    Uri.parse(value)))));
 //        },100);
 
+        /*
+            setting webView parameters
+            enabling all JavaScript setting
+         */
+
         webView = findViewById(R.id.webView);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setDomStorageEnabled(true);
@@ -42,6 +47,11 @@ public class NewsActivity extends AppCompatActivity {
         webView.loadUrl("https://www.mylondon.news/all-about/greenwich");
 
     }
+
+    /**
+     *
+     *  setting image data (Currently no in use)
+     */
 
     public ArrayList<NewsData> newsData() {
         ArrayList<NewsData> newsData = new ArrayList<>();

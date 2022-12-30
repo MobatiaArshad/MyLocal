@@ -17,6 +17,10 @@ import com.example.mylocal.transport.TransportActivity;
 
 public class MainActivity extends AppCompatActivity {
 
+    /**
+     *  finding all
+     */
+
     LinearLayoutCompat ads, guide, transport, news;
     ImageView imageView;
 
@@ -31,11 +35,20 @@ public class MainActivity extends AppCompatActivity {
         transport = findViewById(R.id.transportBtn);
         imageView = findViewById(R.id.greenWitchImage);
 
+
+        /**
+         *  Calling glide to fetch the image from a URL
+         */
+
         Glide.with(this)
                 .asBitmap()
                 .load("https://www.visitgreenwich.org.uk/imageresizer/?image=%2Fdbimgs%2FGRN%20-%20Media%20Gallery%20-%20Ideas%20%26%20Inspo%20-%20WHS.png&action=MediaGallery")
                 .into(imageView);
 
+
+        /**
+         *  changing screen
+         */
 
         ads.setOnClickListener(v -> startActivity(new Intent(this, AdsActivity.class)));
 

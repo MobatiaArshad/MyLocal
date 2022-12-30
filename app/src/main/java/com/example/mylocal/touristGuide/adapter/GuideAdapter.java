@@ -33,6 +33,7 @@ public class GuideAdapter extends RecyclerView.Adapter<GuideAdapter.VH> {
     public void onBindViewHolder(@NonNull VH holder, int position) {
         holder.title.setText(array.get(position));
 
+        // recyclerView item click
         holder.itemView.setOnClickListener(v -> {
             clickedPosition.clicked(position,"");
         });

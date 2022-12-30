@@ -29,20 +29,23 @@ public class AdsAdapter extends RecyclerView.Adapter<AdsAdapter.VH> {
     @NonNull
     @Override
     public VH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        // pointing to recyclerView layout design
         return new VH(LayoutInflater.from(parent.getContext()).inflate(R.layout.ads_rec_lyt,parent,false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull VH holder, int position) {
-//        holder.title.setText(arrayList.get(position).getTitle());
-//        holder.desc.setText(arrayList.get(position).getDesc());
 
+        // setting image from URL
         Glide.with(holder.itemView.getContext())
                 .asBitmap()
                 .load(arrayList.get(position).getImage())
                 .into(holder.img);
 
+        // Item click in RecyclerView
         holder.itemView.setOnClickListener(v -> {
+
+            // passing the Image Url to Fullscreen library
             new StfalconImageViewer.Builder<AdsModel>(holder.itemView.getContext(),arrayList,(imageView, image) -> {
                Glide.with(holder.itemView.getContext())
                        .asBitmap()
@@ -65,8 +68,6 @@ public class AdsAdapter extends RecyclerView.Adapter<AdsAdapter.VH> {
 
         public VH(@NonNull View itemView) {
             super(itemView);
-//            title = itemView.findViewById(R.id.adTitle);
-//            desc = itemView.findViewById(R.id.adDesc);
             img = itemView.findViewById(R.id.adImg);
         }
     }
